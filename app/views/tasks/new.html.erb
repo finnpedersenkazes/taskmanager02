@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">New Task</h1>
+      <%= simple_form_for @task do |f| %>
+        <%= f.input :short_description, placeholder:"Short Description", label: false %>
+        <%= f.input :long_description, placeholder:"Long Description", label: false %>
+        <%= f.input :nature, placeholder:"Nature", label: false %>
+        <%= f.input :urgency, placeholder:"Urgency", label: false %>
+        <%= f.input :duration, placeholder:"Duration", label: false %>
+
+        <%= f.input :attention_date, as: :date_picker, placeholder: "Attention Date" %>
+        <%= f.input :deadline, as: :date_picker, placeholder: "Deadline" %>
+        <%= f.input :expiration_date, as: :date_picker, placeholder: "Expiration Date"  %>
+
+        <%= f.button :submit, "Add Task", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<p class="text-center">
+  <%= link_to "Tasks", tasks_path, class: "btn btn-primary"  %>
+</p>
+
