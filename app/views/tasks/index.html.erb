@@ -5,7 +5,10 @@
       <p>
         <%= link_to "Home Page", root_path, class: "btn btn-primary" %>
         <%= link_to "Add Unplanned Task", new_task_path, class: "btn btn-primary" %>
-        <button class="btn btn-success">Marvin! Please, Help me.</button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+          Marvin! Please, Help me.
+        </button>
       </p>
       <h1 class="text-center">Planned Tasks</h1>
       <table class="table table-bordered">
@@ -171,4 +174,28 @@
     <!-- </div> -->
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">Marvins says: </h2>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <p class="text-center"><%= @marvin_quote %></p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-lg" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 

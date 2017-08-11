@@ -6,6 +6,9 @@ class TasksController < ApplicationController
     @planned_tasks = Task.where(status: 1).order(:planned_date)
     @done_tasks = Task.where(status: 2).order(:removed_date)
     @deleted_tasks = Task.where(status: 3).order(:removed_date)
+
+    @marvin_quote = Faker::HitchhikersGuideToTheGalaxy.marvin_quote
+    # Faker::Hacker.say_something_smart
   end
 
   def show
