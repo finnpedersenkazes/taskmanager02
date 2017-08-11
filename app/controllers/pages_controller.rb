@@ -7,7 +7,8 @@ class PagesController < ApplicationController
   end
 
   def team
-    @members = ["Abrar Saad", "Amira Buz Khallouf", "Genki Takahashi", "Mohamad Alzoubi", "Finn Pedersen"]
+    # @members = ["Abrar Saad", "Amira Buz Khallouf", "Genki Takahashi", "Mohamad Alzoubi", "Finn Pedersen"]
+    @members = ["Finn Pedersen"]
   end
 
   def join_us
