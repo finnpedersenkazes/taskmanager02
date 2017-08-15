@@ -15,4 +15,8 @@ These are a couple of screenshots:
 Part of the app is the first attempt to automatically generate an app.
 Though some files have been modified manually.
 
+API calls
+curl -s http://taskmanager02.herokuapp.com/api/v1/tasks | jq
+curl -s http://taskmanager02.herokuapp.com/api/v1/tasks/1 | jq
+
 Finn Pedersen
