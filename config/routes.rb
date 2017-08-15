@@ -23,6 +23,13 @@ Rails.application.routes.draw do
   # get "/tasks/:id/edit" => tasks#edit
   # patch "/tasks/:id" => tasks#update
   # delete "/tasks/:id" => tasks#destroy
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :tasks, only: [ :index ]
+    end
+  end
+
 end
 
 # member action apply to specfic and collections to all resources / tasks
