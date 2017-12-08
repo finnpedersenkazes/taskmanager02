@@ -38,7 +38,12 @@
               <td><%= task.nature %></td>
               <td><%= task.duration %></td>
               <td><%= task.planned_date %></td>
-              <td><%= task.starting_time.strftime("%H:%M") %></td>
+              <% if task.starting_time? %>
+                <td><%= task.starting_time.strftime("%H:%M") %></td>
+              <% else %>
+                <td></td>
+              <% end %>
+
 <!--
               <td><%= task.urgency %></td>
               <td><%= task.attention_date %></td>

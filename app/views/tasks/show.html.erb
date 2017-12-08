@@ -25,7 +25,11 @@
         <p><strong>Expiration Date: </strong><%= @task.expiration_date %></p>
       <% elsif @task.status == "planned" %>
         <p><strong>Planned Date: </strong><%= @task.planned_date %></p>
-        <p><strong>Starting Time: </strong><%= @task.starting_time.strftime("%H:%M") %></p>
+        <% if @task.starting_time? %>
+          <p><strong>Starting Time: </strong><%= @task.starting_time.strftime("%H:%M") %></p>
+        <% else %>
+          <p><strong>Starting Time: </strong></p>
+        <% end %>
         <p><strong>Duration: </strong><%= @task.duration + ' minutes' %></p>
       <% elsif @task.status == "done" %>
         <p><strong>Completed Date: </strong><%= @task.removed_date %></p>
